@@ -2,6 +2,7 @@
 var LIFF_ID="2012175190-Pd1cp2kq";
 var FORM_URL="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAYtR7TxUMkU3TUVVV1lZU0VENFFVUjY0RjhBNlRSNi4u";
 var NAME_FIELD="rbe6bcddd79b449dc9bc143878021d6c2";
-function go(n){var u=FORM_URL;if(NAME_FIELD&&n){u+="&"+NAME_FIELD+"="+encodeURIComponent(n)}location.replace(u)}
-liff.init({liffId:LIFF_ID}).then(function(){if(!liff.isLoggedIn()){liff.login();return}return liff.getProfile().then(function(p){go(p.displayName)})}).catch(function(){go("")});
+var ID_FIELD="re98ff973f4a8497cab7cb00c2d2c86c2";
+function go(n,i){var u=FORM_URL;if(NAME_FIELD&&n){u+="&"+NAME_FIELD+"="+encodeURIComponent(n)}if(ID_FIELD&&i){u+="&"+ID_FIELD+"="+encodeURIComponent(i)}location.replace(u)}
+liff.init({liffId:LIFF_ID}).then(function(){if(!liff.isLoggedIn()){liff.login();return}return liff.getProfile().then(function(p){go(p.displayName,p.userId)})}).catch(function(){go("","")});
 </script></body></html>
